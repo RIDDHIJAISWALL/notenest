@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# 🔒 Secrets (VERY IMPORTANT)
+.env
+
+# 🚫 Large files
+public.zip
+
+# 🔑 Tokens / private configs
+src/config/github.js
