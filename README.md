@@ -1,69 +1,146 @@
-🌐 NoteNest — Student Resource Hub
+# 🌐 NoteNest — Student Resource Hub
 
-NoteNest is a modern student platform where college students can upload, share, and access study materials like Notes and PYQs in a structured way.
-Built using React + Firebase + Cloudinary, it provides real-time updates, admin moderation, and a clean UI.
+<p align="center">
+  <b>Upload • Share • Learn • Grow 🚀</b><br/>
+  A modern student platform for sharing Notes & PYQs with real-time updates.
+</p>
 
-✨ Features
-👨‍🎓 Student Side
+---
 
-Upload Notes & Previous Year Questions (PYQs)
+## ✨ Overview
 
-Real-time profile stats (uploads & points)
+**NoteNest** is a modern student platform where college students can upload, share, and access study materials like Notes and PYQs in a structured way.
 
-Hall of Fame leaderboard
+Built using **React + Firebase + Cloudinary**, it provides:
 
-Grade Predictor
+✅ Real-time updates  
+✅ Admin moderation system  
+✅ Secure Google Authentication  
+✅ Clean modern UI  
 
-Course resources by Stream & Year
+---
 
-Secure Google Login
+## 🚀 Live Features
 
-🛡️ Admin Dashboard
+### 👨‍🎓 Student Side
 
-Review & approve uploads
+- 📚 Upload Notes & Previous Year Questions
+- ⭐ Real-time profile stats (Uploads & Points)
+- 🏆 Hall of Fame Leaderboard
+- 🎯 Grade Predictor
+- 🧭 Stream & Year based study materials
+- 🔐 Secure Google Login
 
-Reject unwanted submissions
+---
 
-Auto reward points to users
+### 🛡️ Admin Dashboard
 
-Manage study materials
+- ✅ Review & approve uploads
+- ❌ Reject unwanted submissions
+- 🪙 Auto reward points to contributors
+- 📂 Manage study materials
+- 🧑‍🏫 Syllabus Admin Panel
 
-Syllabus Admin Panel
+---
 
-☁️ Backend Features
+## ☁️ Backend & Integrations
 
-Firebase Authentication
+- 🔥 Firebase Authentication
+- 📡 Firestore Real-Time Database
+- ☁️ Cloudinary PDF Storage
+- 🧠 Role-based Access Control
 
-Firestore Real-Time Database
+---
 
-Cloudinary PDF storage
+## 🧰 Tech Stack
 
-Role-based access (Admin / Student)
+| Frontend | Backend | Storage |
+|---|---|---|
+| React (Vite) | Firebase Auth | Cloudinary |
+| Tailwind CSS | Firestore DB |  |
+| React Router |  |  |
+| Lucide Icons |  |  |
 
-🧰 Tech Stack
+---
 
-⚛️ React (Vite)
+## 📁 Project Structure
 
-🎨 Tailwind CSS
+# 🌐 NoteNest — Student Resource Hub
 
-🔥 Firebase (Auth + Firestore)
+<p align="center">
+  <b>Upload • Share • Learn • Grow 🚀</b><br/>
+  A modern student platform for sharing Notes & PYQs with real-time updates.
+</p>
 
-☁️ Cloudinary
+---
 
-🧭 React Router
+## ✨ Overview
 
-🧩 Lucide Icons
+**NoteNest** is a modern student platform where college students can upload, share, and access study materials like Notes and PYQs in a structured way.
 
-STRUCTURE
+Built using **React + Firebase + Cloudinary**, it provides:
+
+✅ Real-time updates  
+✅ Admin moderation system  
+✅ Secure Google Authentication  
+✅ Clean modern UI  
+
+---
+
+## 🚀 Live Features
+
+### 👨‍🎓 Student Side
+
+- 📚 Upload Notes & Previous Year Questions
+- ⭐ Real-time profile stats (Uploads & Points)
+- 🏆 Hall of Fame Leaderboard
+- 🎯 Grade Predictor
+- 🧭 Stream & Year based study materials
+- 🔐 Secure Google Login
+
+---
+
+### 🛡️ Admin Dashboard
+
+- ✅ Review & approve uploads
+- ❌ Reject unwanted submissions
+- 🪙 Auto reward points to contributors
+- 📂 Manage study materials
+- 🧑‍🏫 Syllabus Admin Panel
+
+---
+
+## ☁️ Backend & Integrations
+
+- 🔥 Firebase Authentication
+- 📡 Firestore Real-Time Database
+- ☁️ Cloudinary PDF Storage
+- 🧠 Role-based Access Control
+
+---
+
+## 🧰 Tech Stack
+
+| Frontend | Backend | Storage |
+|---|---|---|
+| React (Vite) | Firebase Auth | Cloudinary |
+| Tailwind CSS | Firestore DB |  |
+| React Router |  |  |
+| Lucide Icons |  |  |
+
+---
+
+## 📁 Project Structure
+
 src/
- ├── pages/
- │    ├── StudyMaterials.jsx
- │    ├── Profile.jsx
- │    ├── AdminDashboard.jsx
- │    ├── HallOfFame.jsx
- │    └── Contact.jsx
- ├── context/
- │    └── AppContext.jsx
- ├── utils/
- │    └── cloudinaryUpload.js
- └── firebase.js
+├── pages/
+│ ├── StudyMaterials.jsx
+│ ├── Profile.jsx
+│ ├── AdminDashboard.jsx
+│ ├── HallOfFame.jsx
+│ └── Contact.jsx
+├── context/
+│ └── AppContext.jsx
+├── utils/
+│ └── cloudinaryUpload.js
+└── firebase.js
