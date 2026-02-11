@@ -912,6 +912,8 @@ const approveUpload = async (file) => {
 
         setUser(newUser);
       localStorage.setItem("notenest_user", JSON.stringify(newUser));
+      localStorage.setItem("login_time", Date.now());
+
 
       setAllUsers((prev) =>
         prev.some((u) => u.email === newUser.email) ? prev : [...prev, newUser]
@@ -945,9 +947,23 @@ const approveUpload = async (file) => {
      AUTO LOGIN
   ----------------------------------------------------------- */
   useEffect(() => {
-    const saved = localStorage.getItem("notenest_user");
-    if (saved) setUser(JSON.parse(saved));
-  }, []);
+  const saved = localStorage.getItem("notenest_user");
+  const loginTime = localStorage.getItem("login_time");
+
+  if (saved && loginTime) {
+    const diff = Date.now() - Number(loginTime);
+
+    // ⏱ 3 HOURS = 10800000 milliseconds
+    if (diff < 10800000) {
+      setUser(JSON.parse(saved)); // still logged in
+    } else {
+      // ❌ logout after 3 hours
+      localStorage.removeItem("notenest_user");
+      localStorage.removeItem("login_time");
+    }
+  }
+}, []);
+
 
   const handleLogout = () => {
     setUser(null);
