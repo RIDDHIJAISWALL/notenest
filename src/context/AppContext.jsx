@@ -933,7 +933,7 @@ const approveUpload = async (file) => {
     const password = fd.get("password");
 
     if (authMode === "admin") {
-      if (email === "admin@notenest.edu" && password === "admin123") {
+      if (email === "riddhi9892jaiswal@gmail.com" && password === "notenestriddhi1406") {
         const adminUser = { name: "System Admin", email, role: "admin" };
         setUser(adminUser);
         localStorage.setItem("notenest_user", JSON.stringify(adminUser));

@@ -90,7 +90,7 @@ export default function AuthPage() {
                   name="email"
                   type="email"
                   required
-                  placeholder="admin@notenest.edu"
+                  placeholder="xyz@gmail.com"
                   className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl 
                              focus:ring-2 focus:ring-indigo-500 outline-none font-medium text-slate-900"
                 />

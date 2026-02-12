@@ -52,7 +52,7 @@ const Contact = () => {
         </div>
 
         <div className="space-y-6">
-          <InfoCard icon={<Mail size={24} />} title="Email Us" text="riddhi9892jaiswal@gmail.com" bg="bg-blue-50" color="text-blue-600" />
+          <InfoCard icon={<Mail size={24} />} title="Email Us" text="xyz@gamil.com" bg="bg-blue-50" color="text-blue-600" />
           <InfoCard icon={<Phone size={24} />} title="Call Us" text="+91 ******" bg="bg-green-50" color="text-green-600" />
           <InfoCard icon={<MapPin size={24} />} title="Visit Us" text="BBD University Campus, Lucknow" bg="bg-orange-50" color="text-orange-600" />
         </div>
