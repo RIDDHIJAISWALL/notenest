@@ -15,6 +15,9 @@ import {
   increment, updateDoc 
 } from "firebase/firestore";
 
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
+import { query, where } from "firebase/firestore";
 
 
 
@@ -923,25 +926,46 @@ const approveUpload = async (file) => {
       setAuthError("Google login failed.");
     }
   };
+// --------------------------------
+  const handleAuth = async (e) => {
+  e.preventDefault();
+  setAuthError("");
 
-  const handleAuth = (e) => {
-    e.preventDefault();
-    setAuthError("");
+  const fd = new FormData(e.target);
+  const email = fd.get("email");
+  const password = fd.get("password");
 
-    const fd = new FormData(e.target);
-    const email = fd.get("email");
-    const password = fd.get("password");
+  try {
+    const result = await signInWithEmailAndPassword(auth, email, password);
+    const loggedUser = result.user;
 
-    if (authMode === "admin") {
-      if (email === "riddhi9892jaiswal@gmail.com" && password === "notenestriddhi1406") {
-        const adminUser = { name: "System Admin", email, role: "admin" };
-        setUser(adminUser);
-        localStorage.setItem("notenest_user", JSON.stringify(adminUser));
-      } else {
-        setAuthError("Invalid admin credentials.");
-      }
+    // 🔥 get role from Firestore (SECURE)
+    const q = query(collection(db, "users"), where("email", "==", loggedUser.email));
+    const snap = await getDocs(q);
+
+    let role = "student";
+
+    if (!snap.empty) {
+      role = snap.docs[0].data().role || "student";
     }
-  };
+
+    const newUser = {
+      id: loggedUser.uid,
+      name: loggedUser.displayName || "User",
+      email: loggedUser.email,
+      role,
+    };
+
+    setUser(newUser);
+    localStorage.setItem("notenest_user", JSON.stringify(newUser));
+    localStorage.setItem("login_time", Date.now());
+
+  } catch (err) {
+    setAuthError("Invalid login credentials");
+  }
+};
+
+
 
   /* -----------------------------------------------------------
      AUTO LOGIN
